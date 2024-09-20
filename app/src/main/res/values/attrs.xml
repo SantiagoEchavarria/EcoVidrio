@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Definir un atributo personalizado -->
+    <!-- Definir varios atributos para una vista personalizada -->
+    <declare-styleable name="CustomView">
+        <attr name="shapeAppearanceCornerSmall" format="reference"/>
+        <attr name="customColor" format="color"/>
+        <attr name="customSize" format="dimension"/>
+    </declare-styleable>
+</resources>
