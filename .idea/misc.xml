@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/admin/Desktop/EcoVidrio/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/admin/Desktop/EcoVidrio/app/src/main/res/layout/activity_crear_usuario.xml" value="0.27291666666666664" />
+        <entry key="..\:/Users/admin/Desktop/EcoVidrio/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/admin/Desktop/EcoVidrio/app/src/main/res/layout/content_crear_usuario.xml" value="0.27291666666666664" />
       </map>
     </option>
   </component>
