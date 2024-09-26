@@ -13,10 +13,6 @@ import java.util.ArrayList;
 public class RecuperarContrasena extends AppCompatActivity {
 
     ArrayList<Operario> listaArrayOperarios;
-    EditText usernameRInput = findViewById(R.id.NombreRUsuario1);
-    EditText TelefonoRInput = findViewById(R.id.TelefonoR);
-    EditText SegundoApellido = findViewById(R.id.SegundoApellido);
-    TextView textContrasena = findViewById(R.id.textContrasena);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +23,20 @@ public class RecuperarContrasena extends AppCompatActivity {
 
 
     public void recuperarContrasena(View view) {
+        EditText usernameRInput = findViewById(R.id.NombreRUsuario1);
+        EditText TelefonoRInput = findViewById(R.id.TelefonoR);
+        EditText SegundoApellido = findViewById(R.id.SegundoApellido);
+        TextView textContrasena = findViewById(R.id.textContrasena);
 
         BdOperario operario = new BdOperario(RecuperarContrasena.this);
-        listaArrayOperarios = new ArrayList<>();
-        listaArrayOperarios= operario.mostrarOperarios();
+
 
         String username = usernameRInput.getText().toString();
         String telefono = TelefonoRInput.getText().toString();
         String segundoApellido = SegundoApellido.getText().toString();
+
+        listaArrayOperarios = new ArrayList<>();
+        listaArrayOperarios= operario.mostrarOperarios();
 
         if (!listaArrayOperarios.isEmpty()) {
             for (Operario o : listaArrayOperarios) {

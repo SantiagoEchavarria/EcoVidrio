@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irHaciaRecuperarContrasena(View view) {
-        Intent intent = new Intent(MainActivity.this, CrearUsuario.class);
+        Intent intent = new Intent(MainActivity.this, RecuperarContrasena.class);
         startActivity(intent);
 
     }
