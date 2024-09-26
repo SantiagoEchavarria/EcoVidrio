@@ -33,7 +33,8 @@ public class Bd extends SQLiteOpenHelper {
                 "apellido2 TEXT NOT NULL," +
                 "telefono TEXT NOT NULL," +
                 "direccion TEXT NOT NULL," +
-                "correo_electronico TEXT)");
+                "correo_electronico TEXT NOT NULL,"+
+                "Contrasena TEXT NOT NULL)");
     }
 
     @Override

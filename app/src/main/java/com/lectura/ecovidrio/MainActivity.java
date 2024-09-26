@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -24,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Referenciar los elementos del layout
-        EditText usernameInput = findViewById(R.id.username);
-        EditText passwordInput = findViewById(R.id.password);
+        EditText usernameInput = findViewById(R.id.correo);
+        EditText passwordInput = findViewById(R.id.contrasena);
         Button loginButton = findViewById(R.id.login_button);
         Button crearUsuario = findViewById(R.id.crearUsuario);
         TextView loginStatus = findViewById(R.id.login_status);
@@ -49,8 +48,10 @@ public class MainActivity extends AppCompatActivity {
                 if (!listaArrayOperarios.isEmpty()) {
                     for (Operario o : listaArrayOperarios) {
 
-                        if (username.equals( o.getCorreoElectronico()) && password.equals(o.getNombre())) {
+                        if (username.equals( o.getCorreoElectronico()) && password.equals(o.getContrasena())) {
                             loginStatus.setText("Se ha ingresado con exito");
+                            Intent intent = new Intent(MainActivity.this, Menu.class);
+                            startActivity(intent);
                         } else {
                             loginStatus.setText("Nombre o contrasena invalida");
                         }
@@ -63,19 +64,13 @@ public class MainActivity extends AppCompatActivity {
                         System.out.println("Teléfono: " + o.getTelefono());
                         System.out.println("Dirección: " + o.getDireccion());
                         System.out.println("Correo Electrónico: " + o.getCorreoElectronico());
+                        System.out.println("Contrasena: " + o.getContrasena());
                         System.out.println("-------------------------------");
                     }
                 } else {
                     System.out.println("La lista de operarios está vacía");
                 }
 
-               /*
-                // Verificar credenciales
-                if (username.equals(correctUsername) && password.equals(correctPassword)) {
-                    loginStatus.setText("Se ha ingresado con exito");
-                } else {
-                    loginStatus.setText("Nombre o contrasena invalida");
-                }*/
             }
         });
     }

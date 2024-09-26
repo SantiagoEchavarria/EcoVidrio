@@ -14,13 +14,13 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/username"
+            android:id="@+id/correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre de Usuario" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contrasena"

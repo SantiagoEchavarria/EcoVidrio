@@ -18,7 +18,7 @@ public class BdOperario extends Bd{
 
 
     public long insertarOperario(String nombre1, String nombre2, String apellido1,
-            String apellido2, String telefono, String direccion, String correo_electronico) {
+            String apellido2, String telefono, String direccion, String correo_electronico, String contrasena) {
 
         long id = 0;
 
@@ -34,6 +34,7 @@ public class BdOperario extends Bd{
             values.put("telefono", telefono);
             values.put("direccion", direccion);
             values.put("correo_electronico", correo_electronico);
+            values.put("contrasena", contrasena);
 
             id = db.insert(operario, null, values);
         } catch (Exception ex) {
@@ -66,6 +67,7 @@ public class BdOperario extends Bd{
                 operario.setTelefono(cursorContactos.getString(5));
                 operario.setDireccion(cursorContactos.getString(6));
                 operario.setCorreoElectronico(cursorContactos.getString(7));
+                operario.setContrasena(cursorContactos.getString(8));
 
                 listaOperario.add(operario);
             } while (cursorContactos.moveToNext());

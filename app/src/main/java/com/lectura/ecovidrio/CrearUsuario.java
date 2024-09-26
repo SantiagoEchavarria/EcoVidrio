@@ -24,9 +24,15 @@ public class CrearUsuario extends AppCompatActivity {
 
         // Referenciar los elementos del layout
         EditText firstNameInput = findViewById(R.id.first_name);
+        EditText secondNameInput = findViewById(R.id.first_name2);
         EditText lastNameInput = findViewById(R.id.last_name);
-        EditText usernameInput = findViewById(R.id.username);
-        EditText passwordInput = findViewById(R.id.password);
+        EditText lastNameInput2 = findViewById((R.id.last_name2));
+        EditText telefonoInput = findViewById((R.id.telefono));
+        EditText direccionInput = findViewById((R.id.direccion));
+        EditText usernameInput = findViewById(R.id.correo);
+        EditText passwordInput = findViewById(R.id.contrasena);
+
+
         Button registerButton = findViewById(R.id.register_button);
         TextView registerStatus = findViewById(R.id.register_status);
 
@@ -36,7 +42,11 @@ public class CrearUsuario extends AppCompatActivity {
             public void onClick(View v) {
                 // Obtener los valores de los campos
                 String firstName = firstNameInput.getText().toString();
+                String secondName = secondNameInput.getText().toString();
                 String lastName = lastNameInput.getText().toString();
+                String lastName2 = lastNameInput2.getText().toString();
+                String telefono =  telefonoInput.getText().toString();
+                String direccion = direccionInput.getText().toString();
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
@@ -55,7 +65,8 @@ public class CrearUsuario extends AppCompatActivity {
                     //Guardar en la bd
                     BdOperario operario = new BdOperario(CrearUsuario.this);
                     listaArrayOperarios = new ArrayList<>();
-                    operario.insertarOperario(firstName,"",lastName, username, password,"","");
+                    operario.insertarOperario(firstName,secondName,lastName, lastName2, telefono,direccion,
+                            username, password);
                     listaArrayOperarios= operario.mostrarOperarios();
 
                     if (!listaArrayOperarios.isEmpty()) {
@@ -68,6 +79,7 @@ public class CrearUsuario extends AppCompatActivity {
                             System.out.println("Teléfono: " + o.getTelefono());
                             System.out.println("Dirección: " + o.getDireccion());
                             System.out.println("Correo Electrónico: " + o.getCorreoElectronico());
+                            System.out.println("Contrasena: " + o.getContrasena());
                             System.out.println("-------------------------------");
                         }
                     } else {

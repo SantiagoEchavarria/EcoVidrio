@@ -9,9 +9,10 @@ public class Operario {
     String telefono;
     String direccion;
     String correo_electronico;
+    String contrasena;
     // Constructor
     public Operario(int id, String nombre, String nombre2, String apellido1, String apellido2,
-                   String telefono, String direccion, String correo_electronico) {
+                   String telefono, String direccion, String correo_electronico, String contrasena) {
         this.id = id;
         this.nombre = nombre;
         this.nombre2 = nombre2;
@@ -20,6 +21,7 @@ public class Operario {
         this.telefono = telefono;
         this.direccion = direccion;
         this.correo_electronico = correo_electronico;
+        this.contrasena=contrasena;
     }
 
     public Operario() {
@@ -59,6 +61,10 @@ public class Operario {
         return correo_electronico;
     }
 
+    public String getContrasena() {
+        return contrasena;
+    }
+
     // Setters
     public void setId(int id) {
         this.id = id;
@@ -90,6 +96,9 @@ public class Operario {
 
     public void setCorreoElectronico(String correo_electronico) {
         this.correo_electronico = correo_electronico;
+    }
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
 }

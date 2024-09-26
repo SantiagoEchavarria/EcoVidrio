@@ -28,7 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 1, Fila 1"
+                android:text="Monitor de la maquina"
                 android:gravity="center"
                 android:padding="16dp"/>
 
@@ -36,7 +36,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 2, Fila 1"
+                android:text="Perfil"
                 android:gravity="center"
                 android:padding="16dp"/>
         </TableRow>
@@ -51,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 1, Fila 2"
+                android:text="Monitor del menu"
                 android:gravity="center"
                 android:padding="16dp"/>
 
@@ -59,7 +59,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 2, Fila 2"
+                android:text="Registro Usuario"
                 android:gravity="center"
                 android:padding="16dp"/>
         </TableRow>
@@ -74,7 +74,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 1, Fila 3"
+                android:text="Monitor del vidrio"
                 android:gravity="center"
                 android:padding="16dp"/>
 
@@ -82,7 +82,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Columna 2, Fila 3"
+                android:text="Registro vidrio"
                 android:gravity="center"
                 android:padding="16dp"/>
         </TableRow>
