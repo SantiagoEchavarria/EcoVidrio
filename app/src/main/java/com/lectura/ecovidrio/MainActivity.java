@@ -10,11 +10,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     // Definir credenciales de ejemplo
     private final String correctUsername = "admin";
     private final String correctPassword = "12345";
+    ArrayList<Operario> listaArrayOperarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,44 @@ public class MainActivity extends AppCompatActivity {
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
+                //Guardar en la bd
+                BdOperario operario = new BdOperario(MainActivity.this);
+                listaArrayOperarios = new ArrayList<>();
+
+                listaArrayOperarios= operario.mostrarOperarios();
+
+
+
+                if (!listaArrayOperarios.isEmpty()) {
+                    for (Operario o : listaArrayOperarios) {
+
+                        if (username.equals( o.getCorreoElectronico()) && password.equals(o.getNombre())) {
+                            loginStatus.setText("Se ha ingresado con exito");
+                        } else {
+                            loginStatus.setText("Nombre o contrasena invalida");
+                        }
+
+                        System.out.println("Operario ID: " + o.getId());
+                        System.out.println("Nombre: " + o.getNombre());
+                        System.out.println("Segundo nombre: " + o.getNombre2());
+                        System.out.println("Apellido 1: " + o.getApellido1());
+                        System.out.println("Apellido 2: " + o.getApellido2());
+                        System.out.println("Teléfono: " + o.getTelefono());
+                        System.out.println("Dirección: " + o.getDireccion());
+                        System.out.println("Correo Electrónico: " + o.getCorreoElectronico());
+                        System.out.println("-------------------------------");
+                    }
+                } else {
+                    System.out.println("La lista de operarios está vacía");
+                }
+
+               /*
                 // Verificar credenciales
                 if (username.equals(correctUsername) && password.equals(correctPassword)) {
-                    loginStatus.setText("Se ha registrado con exito");
+                    loginStatus.setText("Se ha ingresado con exito");
                 } else {
                     loginStatus.setText("Nombre o contrasena invalida");
-                }
+                }*/
             }
         });
     }
