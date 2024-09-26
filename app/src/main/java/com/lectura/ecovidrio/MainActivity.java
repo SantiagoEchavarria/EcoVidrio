@@ -13,18 +13,16 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Definir credenciales de ejemplo
-    private final String correctUsername = "admin";
-    private final String correctPassword = "12345";
     ArrayList<Operario> listaArrayOperarios;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         // Referenciar los elementos del layout
-        EditText usernameInput = findViewById(R.id.correo);
-        EditText passwordInput = findViewById(R.id.contrasena);
+        EditText usernameInput = findViewById(R.id.NombreRUsuario1);
+        EditText passwordInput = findViewById(R.id.TelefonoR);
         Button loginButton = findViewById(R.id.login_button);
         Button crearUsuario = findViewById(R.id.crearUsuario);
         TextView loginStatus = findViewById(R.id.login_status);
@@ -37,10 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 String username = usernameInput.getText().toString();
                 String password = passwordInput.getText().toString();
 
-                //Guardar en la bd
+               //bd
                 BdOperario operario = new BdOperario(MainActivity.this);
                 listaArrayOperarios = new ArrayList<>();
-
                 listaArrayOperarios= operario.mostrarOperarios();
 
 
@@ -77,5 +74,12 @@ public class MainActivity extends AppCompatActivity {
     public void irHaciaCrearUsuario(View view) {
         Intent intent = new Intent(MainActivity.this, CrearUsuario.class);
         startActivity(intent);
+
+    }
+
+    public void irHaciaRecuperarContrasena(View view) {
+        Intent intent = new Intent(MainActivity.this, CrearUsuario.class);
+        startActivity(intent);
+
     }
 }

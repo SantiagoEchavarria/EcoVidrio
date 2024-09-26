@@ -1,7 +1,6 @@
 package com.lectura.ecovidrio;
 
-import android.content.Context;
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,8 +19,6 @@ public class CrearUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_usuario);
 
-
-
         // Referenciar los elementos del layout
         EditText firstNameInput = findViewById(R.id.first_name);
         EditText secondNameInput = findViewById(R.id.first_name2);
@@ -29,9 +26,8 @@ public class CrearUsuario extends AppCompatActivity {
         EditText lastNameInput2 = findViewById((R.id.last_name2));
         EditText telefonoInput = findViewById((R.id.telefono));
         EditText direccionInput = findViewById((R.id.direccion));
-        EditText usernameInput = findViewById(R.id.correo);
-        EditText passwordInput = findViewById(R.id.contrasena);
-
+        EditText usernameInput = findViewById(R.id.NombreRUsuario1);
+        EditText passwordInput = findViewById(R.id.TelefonoR);
 
         Button registerButton = findViewById(R.id.register_button);
         TextView registerStatus = findViewById(R.id.register_status);
@@ -51,7 +47,7 @@ public class CrearUsuario extends AppCompatActivity {
                 String password = passwordInput.getText().toString();
 
                 if (!firstName.isEmpty() && !lastName.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
-                    // Guardar los datos del usuario en SharedPreferences
+                   /* // Guardar los datos del usuario en SharedPreferences
                     SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -59,9 +55,7 @@ public class CrearUsuario extends AppCompatActivity {
                     editor.putString("lastName", lastName);
                     editor.putString("username", username);
                     editor.putString("password", password);
-                    editor.apply();
-
-
+                    editor.apply();*/
                     //Guardar en la bd
                     BdOperario operario = new BdOperario(CrearUsuario.this);
                     listaArrayOperarios = new ArrayList<>();
@@ -82,13 +76,13 @@ public class CrearUsuario extends AppCompatActivity {
                             System.out.println("Contrasena: " + o.getContrasena());
                             System.out.println("-------------------------------");
                         }
+
                     } else {
                         System.out.println("La lista de operarios está vacía");
                     }
-
-
-
                     registerStatus.setText("Usuario registrado con exito!");
+                    Intent intent = new Intent(CrearUsuario.this, MainActivity.class);
+                    startActivity(intent);
                 } else {
                     registerStatus.setText("Rellena todos los campos");
                 }

@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EcoVidrio">
         <activity
+            android:name=".RecuperarContrasena"
+            android:exported="false" />
+        <activity
             android:name=".Menu"
             android:exported="false" />
         <activity

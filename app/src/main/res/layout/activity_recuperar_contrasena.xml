@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RecuperarContrasena">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center">
+        android:padding="16dp">
 
         <EditText
             android:id="@+id/NombreRUsuario1"
@@ -23,42 +23,35 @@
             android:id="@+id/TelefonoR"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contrasena"
+            android:hint="Telefono"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/SegundoApellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Segundo Apellido"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingresar" />
+            android:onClick="recuperarContrasena"
+            android:text="Recuperar contrasena" />
 
         <TextView
             android:id="@+id/login_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:paddingTop="16dp" />
+            android:paddingTop="16dp"
+            android:text="" />
 
-        <Button
-            android:id="@+id/crearUsuario"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:onClick="irHaciaCrearUsuario"
-            android:text="Crear Usuario"
-            android:textColor="@color/purple_500" />
-
-        <Button
-            android:id="@+id/Recuperar"
+        <TextView
+            android:id="@+id/textContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/transparent"
-            android:onClick="irHaciaRecuperarContrasena"
-            android:text="Recuperar Contrasena"
-            android:textColor="@color/purple_500" />
+            android:text="TextView" />
+
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
