@@ -37,14 +37,14 @@ public class CrearUsuario extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Obtener los valores de los campos
-                String firstName = firstNameInput.getText().toString();
-                String secondName = secondNameInput.getText().toString();
-                String lastName = lastNameInput.getText().toString();
-                String lastName2 = lastNameInput2.getText().toString();
-                String telefono =  telefonoInput.getText().toString();
-                String direccion = direccionInput.getText().toString();
-                String username = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
+                String firstName = firstNameInput.getText().toString().trim();
+                String secondName = secondNameInput.getText().toString().trim();
+                String lastName = lastNameInput.getText().toString().trim();
+                String lastName2 = lastNameInput2.getText().toString().trim();
+                String telefono =  telefonoInput.getText().toString().trim();
+                String direccion = direccionInput.getText().toString().trim();
+                String username = usernameInput.getText().toString().trim();
+                String password = passwordInput.getText().toString().trim();
 
                 if (!firstName.isEmpty() && !lastName.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
                    /* // Guardar los datos del usuario en SharedPreferences

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -27,13 +29,28 @@ public class MainActivity extends AppCompatActivity {
         Button crearUsuario = findViewById(R.id.crearUsuario);
         TextView loginStatus = findViewById(R.id.login_status);
 
+        // Obtener el Spinner
+        Spinner spinnerRoles = findViewById(R.id.spinner_roles);
+
+        // Definir las opciones para el Spinner
+        String[] roles = new String[]{"Administrador", "Operario"};
+
+        // Crear un ArrayAdapter usando un layout predeterminado para spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, roles);
+
+        // Especificar el layout que se usará cuando las opciones del spinner sean desplegadas
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Aplicar el adaptador al spinner
+        spinnerRoles.setAdapter(adapter);
+
 
         // Configurar la acción del botón de login
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameInput.getText().toString();
-                String password = passwordInput.getText().toString();
+                String username = usernameInput.getText().toString().trim();
+                String password = passwordInput.getText().toString().trim();
 
                //bd
                 BdOperario operario = new BdOperario(MainActivity.this);
