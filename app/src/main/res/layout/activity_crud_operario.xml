@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -62,25 +63,36 @@
             android:hint="Contrasena "
             android:inputType="textPassword" />
 
-        <!-- Spinner para seleccionar el turno -->
-        <Spinner
-            android:id="@+id/spinnerTurno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp" />
-
-        <Button
-            android:id="@+id/register_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Crear" />
-
         <TextView
             android:id="@+id/register_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
             android:paddingTop="16dp" />
+
+        <Button
+            android:id="@+id/crearOperario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crear" />
+
+        <Button
+            android:id="@+id/modificarOperario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar" />
+
+        <Button
+            android:id="@+id/BuscarOperario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <Button
+            android:id="@+id/EliminarOperario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar" />
 
     </LinearLayout>
 

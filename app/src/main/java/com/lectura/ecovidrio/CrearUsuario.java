@@ -3,34 +3,50 @@ package com.lectura.ecovidrio;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
 public class CrearUsuario extends AppCompatActivity {
-    // Nombre del archivo SharedPreferences
+
     private static final String PREFS_NAME = "UserPrefs";
     ArrayList<Operario> listaArrayOperarios;
+    private Spinner spinnerTurno, spinnerTipoUsuario;
+    BdOperario bdOperario;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_usuario);
 
         // Referenciar los elementos del layout
-        EditText firstNameInput = findViewById(R.id.first_name);
-        EditText secondNameInput = findViewById(R.id.first_name2);
-        EditText lastNameInput = findViewById(R.id.last_name);
-        EditText lastNameInput2 = findViewById((R.id.last_name2));
-        EditText telefonoInput = findViewById((R.id.telefono));
-        EditText direccionInput = findViewById((R.id.direccion));
-        EditText usernameInput = findViewById(R.id.NombreRUsuario1);
-        EditText passwordInput = findViewById(R.id.TelefonoR);
+        EditText firstNameInput = findViewById(R.id.horaEntradaTurno);
+        EditText secondNameInput = findViewById(R.id.nombre2Operario);
+        EditText lastNameInput = findViewById(R.id.apellidoOperario);
+        EditText lastNameInput2 = findViewById((R.id.apellido2Operario));
+        EditText telefonoInput = findViewById((R.id.telefonoOperario));
+        EditText direccionInput = findViewById((R.id.direccionOperario));
+        EditText usernameInput = findViewById(R.id.NombreRUsuarioOperario);
+        EditText passwordInput = findViewById(R.id.HoraSalidaTurno);
+
 
         Button registerButton = findViewById(R.id.register_button);
         TextView registerStatus = findViewById(R.id.register_status);
+
+        // Inicializa la base de datos y el Spinner
+        spinnerTurno = findViewById(R.id.spinnerTurno);
+        bdOperario = new BdOperario(this);
+
+        // Cargar los nombres de los operarios en el Spinner
+        cargarOperariosEnSpinner();
+
 
         // Configurar la acción del botón de registro
         registerButton.setOnClickListener(new View.OnClickListener() {
@@ -47,15 +63,16 @@ public class CrearUsuario extends AppCompatActivity {
                 String password = passwordInput.getText().toString().trim();
 
                 if (!firstName.isEmpty() && !lastName.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
-                   /* // Guardar los datos del usuario en SharedPreferences
-                    SharedPreferences sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
 
-                    editor.putString("firstName", firstName);
-                    editor.putString("lastName", lastName);
-                    editor.putString("username", username);
-                    editor.putString("password", password);
-                    editor.apply();*/
+                    // Validar y mostrar los datos obtenidos
+                    if (!firstName.isEmpty() && !username.isEmpty() && !password.isEmpty()) {
+                        registerStatus.setText("Usuario registrado exitosamente:\n" +
+                                "Nombre: " + firstName + " " + lastName + "\n");
+                    } else {
+                        Toast.makeText(CrearUsuario.this, "Por favor, rellena todos los campos obligatorios", Toast.LENGTH_SHORT).show();
+                    }
+
+
                     //Guardar en la bd
                     BdOperario operario = new BdOperario(CrearUsuario.this);
                     listaArrayOperarios = new ArrayList<>();
@@ -80,13 +97,43 @@ public class CrearUsuario extends AppCompatActivity {
                     } else {
                         System.out.println("La lista de operarios está vacía");
                     }
+
                     registerStatus.setText("Usuario registrado con exito!");
                     Intent intent = new Intent(CrearUsuario.this, MainActivity.class);
                     startActivity(intent);
                 } else {
                     registerStatus.setText("Rellena todos los campos");
                 }
+
+
+
             }
         });
     }
+    private void cargarOperariosEnSpinner() {
+        // Obtener lista de nombres de operarios desde la base de datos
+        ArrayList<String> listaOperarios = obtenerNombresOperarios();
+
+        // Crear un adaptador para el Spinner
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, listaOperarios);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Asignar el adaptador al Spinner
+        spinnerTurno.setAdapter(adapter);
+    }
+
+    private ArrayList<String> obtenerNombresOperarios() {
+        // Obtén los operarios de la base de datos
+        ArrayList<Operario> operarios = bdOperario.mostrarOperarios();
+
+        // Crear una lista de nombres de operarios
+        ArrayList<String> listaNombres = new ArrayList<>();
+        for (Operario operario : operarios) {
+            listaNombres.add(operario.getNombre());  // Aquí se asume que solo se mostrará el primer nombre
+        }
+
+        return listaNombres;
+    }
+
+
 }

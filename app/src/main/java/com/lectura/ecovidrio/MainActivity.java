@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Referenciar los elementos del layout
-        EditText usernameInput = findViewById(R.id.NombreRUsuario1);
-        EditText passwordInput = findViewById(R.id.TelefonoR);
+        EditText usernameInput = findViewById(R.id.NombreRUsuarioOperario);
+        EditText passwordInput = findViewById(R.id.HoraSalidaTurno);
         Button loginButton = findViewById(R.id.login_button);
         Button crearUsuario = findViewById(R.id.crearUsuario);
         TextView loginStatus = findViewById(R.id.login_status);

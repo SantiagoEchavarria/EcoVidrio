@@ -78,7 +78,7 @@ public class BdOperario extends Bd{
         return listaOperario;
     }
 
-    public Operario verContacto(int id) {
+    public Operario verOperario(int id) {
 
         Bd dbHelper = new Bd(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -110,7 +110,7 @@ public class BdOperario extends Bd{
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
         try {
-            db.execSQL("UPDATE " + operario + " SET nombre = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
+            db.execSQL("UPDATE " + operario + " SET nombre1 = '" + nombre + "', telefono = '" + telefono + "', correo_electronico = '" + correo_electronico + "' WHERE id='" + id + "' ");
             correcto = true;
         } catch (Exception ex) {
             ex.toString();

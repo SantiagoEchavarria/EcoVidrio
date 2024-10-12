@@ -25,6 +25,7 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/monitor_maquina"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -33,6 +34,7 @@
                 android:padding="16dp"/>
 
             <TextView
+                android:id="@+id/perfil"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -56,6 +58,7 @@
                 android:padding="16dp"/>
 
             <TextView
+                android:id="@+id/usaurio"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -88,7 +91,4 @@
         </TableRow>
 
     </TableLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-

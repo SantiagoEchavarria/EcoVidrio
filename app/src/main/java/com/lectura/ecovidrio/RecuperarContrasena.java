@@ -2,7 +2,6 @@ package com.lectura.ecovidrio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,8 +22,8 @@ public class RecuperarContrasena extends AppCompatActivity {
 
 
     public void recuperarContrasena(View view) {
-        EditText usernameRInput = findViewById(R.id.NombreRUsuario1);
-        EditText TelefonoRInput = findViewById(R.id.TelefonoR);
+        EditText usernameRInput = findViewById(R.id.NombreRUsuarioOperario);
+        EditText TelefonoRInput = findViewById(R.id.HoraSalidaTurno);
         EditText SegundoApellido = findViewById(R.id.SegundoApellido);
         TextView textContrasena = findViewById(R.id.textContrasena);
 

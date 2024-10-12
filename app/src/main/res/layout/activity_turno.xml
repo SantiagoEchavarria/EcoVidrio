@@ -4,84 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrearUsuario">
+    tools:context=".TurnoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:gravity="center">
+        android:padding="16dp">
 
-        <EditText
-            android:id="@+id/horaEntradaTurno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Primer Nombre" />
-
-        <EditText
-            android:id="@+id/nombre2Operario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Segundo Nombre" />
-
-        <EditText
-            android:id="@+id/apellidoOperario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Primer Apellido" />
-
-        <EditText
-            android:id="@+id/apellido2Operario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Segundo Apellido" />
-
-        <EditText
-            android:id="@+id/telefonoOperario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Telefono" />
-
-        <EditText
-            android:id="@+id/direccionOperario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Direccion" />
-
-        <EditText
-            android:id="@+id/NombreRUsuarioOperario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="CorreoElectronico" />
-
-        <EditText
-            android:id="@+id/HoraSalidaTurno"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Contrasena "
-            android:inputType="textPassword" />
-
-        <!-- Spinner para seleccionar el turno -->
         <Spinner
             android:id="@+id/spinnerTurno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp" />
 
+        <EditText
+            android:id="@+id/NombreTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre Turno" />
+
+        <EditText
+            android:id="@+id/horaEntradaTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora Entrada" />
+
+        <!-- Spinner para seleccionar el turno -->
+
+        <EditText
+            android:id="@+id/horaEntradaTurno2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hora Salida" />
+
         <Button
-            android:id="@+id/register_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/idCrear"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Crear" />
+
+        <Button
+            android:id="@+id/modificarTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modificar" />
+
+        <Button
+            android:id="@+id/EliminarTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Eliminar" />
+
+        <Button
+            android:id="@+id/BuscarTurno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
 
         <TextView
             android:id="@+id/register_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=""
-            android:paddingTop="16dp" />
+            android:paddingTop="16dp"
+            android:text="" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

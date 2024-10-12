@@ -14,13 +14,13 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/NombreRUsuario1"
+            android:id="@+id/NombreRUsuarioOperario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Nombre de Usuario" />
 
         <EditText
-            android:id="@+id/TelefonoR"
+            android:id="@+id/HoraSalidaTurno"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Contrasena"
